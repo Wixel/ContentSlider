@@ -43,7 +43,7 @@ A simple jQuery based content slider that doesn't require you to add cryptic css
 				At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
 			</p>
 		</div>			
-		<!-- Slides -->	
+		<!-- /Slides -->	
 	</div>		
 
 	<a href="#" class="next-slide" title="Next Slide">Next Slide</a>			
@@ -93,5 +93,26 @@ $(document).ready(function(){
 		e.preventDefault();
 		$('.slide-container').wxContentSlider('next');
 	});	
+});
+```
+
+# Automating the scroller:
+
+The scroller does not have an automated scroll facility, so you'll need to roll your own, but luckily it's pretty easy:
+
+```javascript
+function automated_scroll()
+{
+	$('.slide-container').wxContentSlider('next');			
+	
+	setInterval('automated_scroll()', 500);
+}
+
+$(document).ready(function(){
+	// Init
+	$('.slide-container').wxContentSlider();		
+	
+	// Automation baby!
+	automated_scroll();
 });
 ```
