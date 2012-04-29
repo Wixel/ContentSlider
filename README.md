@@ -4,10 +4,10 @@ A simple jQuery based content slider that doesn't require you to add cryptic css
 
 1) Include jQuery & the plugin in your source code
 
-<pre>
+```html
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="/js/jquery.wixel.content_slider.min.js"></script>
-</pre>
+```
 
 2) Set up your scrolling content:
 
