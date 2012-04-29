@@ -76,7 +76,7 @@ $(document).ready(function(){
 
 # Attaching scroller navigation:
 
-The scroller does not automatically generate hrefs/buttons/links/etc to attach navigation handlers to, you need to do this yourself (we said it stays our of your way). 
+The scroller does not automatically generate hrefs/buttons/links/etc to attach navigation handlers to, you need to do this yourself (we did say it stays our of your way). 
 
 ```javascript
 $(document).ready(function(){
@@ -98,14 +98,14 @@ $(document).ready(function(){
 
 # Automating the scroller:
 
-The scroller does not have an automated scroll facility, so you'll need to roll your own, but luckily it's pretty easy:
+The scroller does not have an automated scroll facility (did we mention it stays out of your way?), so you'll need to roll your own, but luckily it's pretty easy:
 
 ```javascript
 function automated_scroll()
 {
 	$('.slide-container').wxContentSlider('next');			
 	
-	setInterval('automated_scroll()', 500);
+	setInterval('automated_scroll()', 5000);
 }
 
 $(document).ready(function(){
