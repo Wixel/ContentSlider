@@ -9,11 +9,10 @@ A simple jQuery based content slider that doesn't require you to add cryptic css
 <script type="text/javascript" src="/js/jquery.wixel.content_slider.min.js"></script>
 ```
 
-2) Set up your scrolling content:
+2) Set up your scrolling HTML content:
 
-<pre>
-	
-<section id="home-slider">
+```html
+<section>
 	<a href="#" class="previous-slide" title="Previous Slide">Previous Slide</a>
 
 	<div class="slide-container">
@@ -49,5 +48,6 @@ A simple jQuery based content slider that doesn't require you to add cryptic css
 
 	<a href="#" class="next-slide" title="Next Slide">Next Slide</a>			
 </section>
+```
 
-</pre>
+The only thing you need to keep in mind is that you need to add the `slide-item` class to anything that you want to included in the slide. These should usually all be the same width and height as well as be block elements (like divs).
