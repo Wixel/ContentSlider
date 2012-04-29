@@ -1,4 +1,4 @@
-/*!
+/**
  * Wixel Content Slider
  * http://wixelhq.com
  *
@@ -13,13 +13,19 @@
 		init : function( options ) 
 		{ 
 			var settings = $.extend({
-				'debug': false
+				'debug': false,
+				'speed': 500
 			}, options);  	
 
 			if(settings.debug)
 			{
 				jQuery.data(document.body, 'wx_scroll_debug', true);
 			}	
+			
+			if(settings.speed)
+			{
+				jQuery.data(document.body, 'wx_scroll_speed', settings.speed);
+			}			
 
 			return this.each(function() {
 
@@ -85,7 +91,7 @@
 
 				var slide_width = $(this).data('slide_width');
 
-				$this.find('.wx-slide-rail').animate({'left': -(count * slide_width)}, 500);  	      
+				$this.find('.wx-slide-rail').animate({'left': -(count * slide_width)}, jQuery.data(document.body, 'wx_scroll_speed'));  	      
 
 			});
 		},
@@ -112,7 +118,7 @@
 
 				var slide_width = $(this).data('slide_width');
 
-				$this.find('.wx-slide-rail').animate({'left': -(count * slide_width)}, 500);  	      
+				$this.find('.wx-slide-rail').animate({'left': -(count * slide_width)}, jQuery.data(document.body, 'wx_scroll_speed'));  	      
 			});
 		},
 		log: function(msg)
