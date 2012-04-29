@@ -95,24 +95,3 @@ $(document).ready(function(){
 	});	
 });
 ```
-
-# Automating the scroller:
-
-The scroller does not have an automated scroll facility (did we mention it stays out of your way?), so you'll need to roll your own, but luckily it's pretty easy:
-
-```javascript
-function automated_scroll()
-{
-	$('.slide-container').wxContentSlider('next');			
-	
-	setInterval('automated_scroll()', 5000);
-}
-
-$(document).ready(function(){
-	// Init
-	$('.slide-container').wxContentSlider();		
-	
-	// Automation baby!
-	automated_scroll();
-});
-```
