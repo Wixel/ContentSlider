@@ -1,6 +1,6 @@
 A simple jQuery based content slider that doesn't require you to add cryptic css structures or javascript to your projects. If all you want it a content slider that can slide any html content, then this is a perfect fit. 
 
-#  Usage Examples:
+#  Usage Example:
 
 1) Include jQuery & the plugin in your source code
 
@@ -51,3 +51,47 @@ A simple jQuery based content slider that doesn't require you to add cryptic css
 ```
 
 The only thing you need to keep in mind is that you need to add the `slide-item` class to anything that you want to included in the slide. These should usually all be the same width and height as well as be block elements (like divs).
+
+3) Initialize the slider in your Javascript:
+
+```javascript
+$(document).ready(function(){
+	$('.slide-container').wxContentSlider();	
+});
+```
+
+# Available Options:
+
+* `debug` Provides some handy info about what's going on inside the plugin if you have firefox with firebug installed
+* `speed` The speed (in milliseconds) at which the slide animation happens
+
+```javascript
+$(document).ready(function(){
+	$('.slide-container').wxContentSlider({
+		debug: true, // false by default
+		speed: 10000 // 500 by default
+	});	
+});
+```
+
+# Attaching scroller navigation:
+
+The scroller does not automatically generate hrefs/buttons/links/etc to attach navigation handlers to, you need to do this yourself (we said it stays our of your way). 
+
+```javascript
+$(document).ready(function(){
+	$('.slide-container').wxContentSlider();	
+	
+	// Previous Link
+	$('.previous-slide').click(function(e){
+		e.preventDefault();
+		$('.slide-container').wxContentSlider('previous');			
+	});
+		
+	// Next Link
+	$('.next-slide').click(function(e){
+		e.preventDefault();
+		$('.slide-container').wxContentSlider('next');
+	});	
+});
+```
